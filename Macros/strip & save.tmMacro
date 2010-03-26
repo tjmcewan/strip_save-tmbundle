@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>nop</string>
+				<key>command</key>
+				<string>#!/usr/bin/env ruby
+
+# strip trailing spaces from line ends,
+# but not indentation placeholders
+
+doc_text = STDIN.read
+puts doc_text.gsub(/\b[\t ]+$/, '')
+
+# NB: using "puts" always adds a new line at EOF (if
+# there isn't one already) to stop this use "print"
+</string>
+				<key>input</key>
+				<string>document</string>
+				<key>name</key>
+				<string>strip</string>
+				<key>output</key>
+				<string>replaceDocument</string>
+				<key>uuid</key>
+				<string>F69BD1FF-832E-4FE7-802D-48CCC301CCCA</string>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>saveActiveFile</string>
+				<key>input</key>
+				<string>none</string>
+				<key>name</key>
+				<string>save</string>
+				<key>output</key>
+				<string>discard</string>
+				<key>uuid</key>
+				<string>71F25AA9-C4F5-4DCC-8CE7-4F42CB84CE60</string>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>@s</string>
+	<key>name</key>
+	<string>strip &amp; save</string>
+	<key>uuid</key>
+	<string>C5B7D62C-BED8-49BA-BB94-E1534BF3A694</string>
+</dict>
+</plist>
