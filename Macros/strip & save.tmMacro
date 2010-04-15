@@ -15,8 +15,11 @@
 # strip trailing spaces from line ends,
 # but not indentation placeholders
 
+# edit: this actually only works when [a-zA-Z]
+# is the last character, hence reverting to strip all
+
 doc_text = STDIN.read
-puts doc_text.gsub(/\b[\t ]+$/, '')
+puts doc_text.gsub(/[\t ]+$/, '')
 
 # NB: using "puts" always adds a new line at EOF (if
 # there isn't one already) to stop this use "print"
