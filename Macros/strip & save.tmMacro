@@ -19,7 +19,7 @@
 # is the last character, hence reverting to strip all
 
 doc_text = STDIN.read
-puts doc_text.gsub(/[\t ]+$/, '')
+puts doc_text.gsub(/(\S)[\t ]+$/) { $1 }
 
 # NB: using "puts" always adds a new line at EOF (if
 # there isn't one already) to stop this use "print"
